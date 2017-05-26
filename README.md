@@ -17,7 +17,7 @@ Source code prettifier plugin for Geany.
 
 Install the [Prettify](https://github.com/senselogic/GEANY_PRETTIFY) command line tool.
 
-Build the plugin with the following command line :
+Build the plugin with the following command lines :
 
 ```bash
 gcc -O3 -c geany_prettify.c -fPIC `pkg-config --cflags geany` 
