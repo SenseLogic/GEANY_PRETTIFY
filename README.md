@@ -36,7 +36,7 @@ Use the Prettify option in the Tool menu.
 
 ## Version
 
-0.1
+1.0
 
 ## Author
 
