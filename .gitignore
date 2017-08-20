@@ -1,2 +1,2 @@
-geany_prettify.o
-geany_prettify.so
+*.o
+*.so
