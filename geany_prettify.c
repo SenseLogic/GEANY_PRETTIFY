@@ -82,7 +82,7 @@ GeanyData
 
 gchar * GetFixedFileText(
     gchar * file_text,
-    int file_text_length,
+    gint file_text_length,
     gchar * file_path
     )
 {
@@ -92,7 +92,7 @@ gchar * GetFixedFileText(
         * fixed_file_path,
         * fixed_file_text,
         * system_command;
-    int
+    gint
         fixed_file_text_length;
     FILE
         * fixed_file;
@@ -181,7 +181,9 @@ static void ManageActivation(
         * file_path,
         * file_text,
         * fixed_file_text;
-    int
+    gint
+        character_index,
+        line_index,
         file_text_length;
     GeanyDocument
         * document;
@@ -193,7 +195,12 @@ static void ManageActivation(
     if ( document != 0 )
     {
         scintilla_object = document->editor->sci;
+
         sci_start_undo_action( scintilla_object );
+        sci_scroll_caret( scintilla_object );
+
+        character_index = sci_get_current_position( scintilla_object );
+        line_index = sci_get_line_from_position( scintilla_object, character_index );
 
         file_path = document->file_name;
 
@@ -208,6 +215,8 @@ static void ManageActivation(
             if ( *fixed_file_text )
             {
                 sci_set_text( scintilla_object, fixed_file_text );
+                sci_set_current_position( scintilla_object, character_index, TRUE );
+                sci_goto_line( scintilla_object, line_index, TRUE );
             }
 
             free( fixed_file_text );
