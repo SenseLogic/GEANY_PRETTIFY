@@ -1,3 +1,5 @@
+![](https://github.com/senselogic/GEANY_PRETTIFY/blob/master/LOGO/geany_prettify.png)
+
 # Geany Prettify
 
 Source code prettifier plugin for Geany.
