@@ -18,8 +18,6 @@
     along with Geany Prettify.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// == LOCAL
-
 // -- CONSTANTS
 
 #define GETTEXT_PACKAGE "prettify"
@@ -53,8 +51,6 @@ static gchar
     * PrettifyPath = NULL;
 static GtkWidget
     * MenuWidget = NULL;
-
-// == GLOBAL
 
 // -- DECLARATIONS
 
