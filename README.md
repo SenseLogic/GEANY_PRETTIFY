@@ -22,7 +22,9 @@ Install the [Prettify](https://github.com/senselogic/GEANY_PRETTIFY) command lin
 Build the plugin with the following command lines :
 
 ```bash
-gcc -O3 -c geany_prettify.c -fPIC `pkg-config --cflags geany` 
+sudo apt update
+sudo apt install geany geany-common geany-plugins geany-plugins-common libgtk-3-dev intltool
+gcc -O3 -c geany_prettify.c -fPIC `pkg-config --cflags geany`
 gcc -O3 geany_prettify.o -o geany_prettify.so -shared `pkg-config --libs geany`
 ```
 
